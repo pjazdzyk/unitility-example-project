@@ -1,9 +1,9 @@
 package com.synerset.exampleproject.fluidproperties;
 
-import com.synerset.unitility.unitsystem.density.Density;
-import com.synerset.unitility.unitsystem.dynamicviscosity.DynamicViscosity;
-import com.synerset.unitility.unitsystem.pressure.Pressure;
-import com.synerset.unitility.unitsystem.temperature.Temperature;
+import com.synerset.unitility.unitsystem.thermodynamic.Density;
+import com.synerset.unitility.unitsystem.thermodynamic.DynamicViscosity;
+import com.synerset.unitility.unitsystem.thermodynamic.Pressure;
+import com.synerset.unitility.unitsystem.thermodynamic.Temperature;
 import io.vavr.control.Either;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

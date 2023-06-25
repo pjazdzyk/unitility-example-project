@@ -1,13 +1,6 @@
 package com.synerset.exampleproject.fluidproperties;
 
-import com.synerset.unitility.unitsystem.density.Density;
-import com.synerset.unitility.unitsystem.dynamicviscosity.DynamicViscosity;
-import com.synerset.unitility.unitsystem.kinematicviscosity.KinematicViscosity;
-import com.synerset.unitility.unitsystem.pressure.Pressure;
-import com.synerset.unitility.unitsystem.specificenthalpy.SpecificEnthalpy;
-import com.synerset.unitility.unitsystem.specificheat.SpecificHeat;
-import com.synerset.unitility.unitsystem.temperature.Temperature;
-import com.synerset.unitility.unitsystem.thermalconductivity.ThermalConductivity;
+import com.synerset.unitility.unitsystem.thermodynamic.*;
 import io.vavr.control.Either;
 import io.vavr.control.Validation;
 import org.slf4j.Logger;

@@ -2,14 +2,7 @@ package com.synerset.exampleproject.fluidproperties;
 
 import com.synerset.exampleproject.utils.MathUtils;
 import com.synerset.exampleproject.utils.PhysicsConstants;
-import com.synerset.unitility.unitsystem.density.Density;
-import com.synerset.unitility.unitsystem.dynamicviscosity.DynamicViscosity;
-import com.synerset.unitility.unitsystem.kinematicviscosity.KinematicViscosity;
-import com.synerset.unitility.unitsystem.pressure.Pressure;
-import com.synerset.unitility.unitsystem.specificenthalpy.SpecificEnthalpy;
-import com.synerset.unitility.unitsystem.specificheat.SpecificHeat;
-import com.synerset.unitility.unitsystem.temperature.Temperature;
-import com.synerset.unitility.unitsystem.thermalconductivity.ThermalConductivity;
+import com.synerset.unitility.unitsystem.thermodynamic.*;
 
 final class DryAirPropertiesEquations {
 
