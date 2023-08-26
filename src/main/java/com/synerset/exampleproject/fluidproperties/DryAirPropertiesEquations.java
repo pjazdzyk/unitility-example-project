@@ -12,14 +12,14 @@ public final class DryAirPropertiesEquations {
     }
 
     Density density(Temperature temp, Pressure press) {
-        double tk = temp.getValueOfKelvin();
-        double pa = press.getValueOfPascals();
+        double tk = temp.getInKelvins();
+        double pa = press.getInPascals();
         double rho = pa / (PhysicsConstants.CST_DA_RG * tk);
         return Density.ofKilogramPerCubicMeter(rho);
     }
 
     DynamicViscosity dynamicViscosity(Temperature temp) {
-        double tk = temp.getValueOfKelvin();
+        double tk = temp.getInKelvins();
         double dynVis = (0.40401 + 0.074582 * tk - 5.7171 * Math.pow(10, -5)
                 * Math.pow(tk, 2) + 2.9928 * Math.pow(10, -8)
                 * Math.pow(tk, 3) - 6.2524 * Math.pow(10, -12)
@@ -28,7 +28,7 @@ public final class DryAirPropertiesEquations {
     }
 
     ThermalConductivity thermalConductivity(Temperature temp) {
-        double ta = temp.getValueOfCelsius();
+        double ta = temp.getInCelsius();
         double k = 2.43714 * Math.pow(10, -2)
                 + 7.83035 * Math.pow(10, -5) * ta
                 - 1.94021 * Math.pow(10, -8) * Math.pow(ta, 2)
@@ -38,7 +38,7 @@ public final class DryAirPropertiesEquations {
     }
 
     SpecificHeat specificHeat(Temperature temp) {
-        double ta = temp.getValueOfCelsius();
+        double ta = temp.getInCelsius();
         if (ta <= -73.15) {
             return SpecificHeat.ofKiloJoulePerKiloGramKelvin(1.002);
         }
@@ -75,16 +75,16 @@ public final class DryAirPropertiesEquations {
 
     SpecificEnthalpy specificEnthalpy(Temperature temp) {
         SpecificHeat specHeat = specificHeat(temp);
-        double cp = specHeat.getValueOfKiloJoulesPerKilogramKelvin();
-        double ta = temp.toCelsius().getValue();
+        double cp = specHeat.getInKiloJoulesPerKiloGramKelvin();
+        double ta = temp.getInCelsius();
         double i = cp * ta;
         return SpecificEnthalpy.ofKiloJoulePerKiloGram(i);
     }
 
     KinematicViscosity kinematicViscosity(Temperature temp, Density density) {
-        double densityVal = density.getValueOfKilogramPerCubicMeter();
-        DynamicViscosity dynVis = dynamicViscosity(temp).toKiloGramPerMeterSecond();
-        double kinVis = dynVis.getValue() / densityVal;
+        double densityVal = density.getInKilogramsPerCubicMeters();
+        double dynVis = dynamicViscosity(temp).getInKiloGramPerMeterSecond();
+        double kinVis = dynVis / densityVal;
         return KinematicViscosity.ofSquareMeterPerSecond(kinVis);
     }
 
