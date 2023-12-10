@@ -20,7 +20,7 @@ public class DryAirPropertiesFactory {
                 .map(tx -> equations.density((Temperature) tx, press))
                 .toEither()
                 .mapLeft(combinedInvalid -> {
-                    String errorMsg = String.format("Density could not be created for arguments: " + temp + ", " + press);
+                    String errorMsg = "Density could not be created for arguments: " + temp + ", " + press;
                     LOGGER.warn(errorMsg);
                     return FluidValidators.combineInvalids(combinedInvalid, new InvalidQuantity(errorMsg, temp, press));
                 });
@@ -32,7 +32,7 @@ public class DryAirPropertiesFactory {
                 .map(tx -> equations.dynamicViscosity((Temperature) tx))
                 .toEither()
                 .mapLeft(combinedInvalid -> {
-                    String errorMsg = String.format("Dynamic viscosity could not be created for arguments: " + temp);
+                    String errorMsg = "Dynamic viscosity could not be created for arguments: " + temp;
                     LOGGER.warn(errorMsg);
                     return FluidValidators.combineInvalids(combinedInvalid, new InvalidQuantity(errorMsg));
                 });
@@ -44,7 +44,7 @@ public class DryAirPropertiesFactory {
                 .map(tx -> equations.thermalConductivity((Temperature) tx))
                 .toEither()
                 .mapLeft(combinedInvalid -> {
-                    String errorMsg = String.format("Thermal conductivity could not be created for arguments: " + temp);
+                    String errorMsg = "Thermal conductivity could not be created for arguments: " + temp;
                     LOGGER.warn(errorMsg);
                     return FluidValidators.combineInvalids(combinedInvalid, new InvalidQuantity(errorMsg));
                 });
@@ -56,7 +56,7 @@ public class DryAirPropertiesFactory {
                 .map(tx -> equations.specificHeat((Temperature) tx))
                 .toEither()
                 .mapLeft(combinedInvalid -> {
-                    String errorMsg = String.format("Specific heat could not be created for arguments: " + temp);
+                    String errorMsg = "Specific heat could not be created for arguments: " + temp;
                     LOGGER.warn(errorMsg);
                     return FluidValidators.combineInvalids(combinedInvalid, new InvalidQuantity(errorMsg));
                 });
@@ -68,7 +68,7 @@ public class DryAirPropertiesFactory {
                 .map(tx -> equations.specificEnthalpy((Temperature) tx))
                 .toEither()
                 .mapLeft(combinedInvalid -> {
-                    String errorMsg = String.format("Specific enthalpy could not be created for arguments: " + temp);
+                    String errorMsg = "Specific enthalpy could not be created for arguments: " + temp;
                     LOGGER.warn(errorMsg);
                     return FluidValidators.combineInvalids(combinedInvalid, new InvalidQuantity(errorMsg));
                 });
@@ -83,7 +83,7 @@ public class DryAirPropertiesFactory {
                 .mapError(FluidValidators::combineSeqOfInvalids)
                 .toEither()
                 .mapLeft(combinedInvalid -> {
-                    String errorMsg = String.format("Kinematic Viscosity could not be created for arguments: " + temp + ", " + density);
+                    String errorMsg = "Kinematic Viscosity could not be created for arguments: " + temp + ", " + density;
                     LOGGER.warn(errorMsg);
                     return FluidValidators.combineInvalids(combinedInvalid, new InvalidQuantity(errorMsg));
                 });

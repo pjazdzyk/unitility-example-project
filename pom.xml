@@ -15,12 +15,12 @@
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
         <vavr.version>1.0.0-alpha-4</vavr.version>
         <assertj-core.version>3.24.2</assertj-core.version>
-        <unitility.version>1.2.0</unitility.version>
+        <unitility.version>2.0.0</unitility.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>com.synerset</groupId>
-            <artifactId>unitility</artifactId>
+            <artifactId>unitility-core</artifactId>
             <version>${unitility.version}</version>
         </dependency>
         <dependency>
